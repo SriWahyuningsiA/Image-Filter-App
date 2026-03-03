@@ -2,22 +2,16 @@ import React from "react";
 
 function ImagePreview({ image, filterStyle }) {
   return (
-    <div style={{
-      width: "300px",
-      height: "250px",
-      border: "1px solid gray",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center"
-    }}>
+    <div className="image-box">
       {image ? (
         <img
           src={image}
           alt="Preview"
-          style={{ maxWidth: "100%", maxHeight: "100%", filter: filterStyle }}
+          className="preview-image"
+          style={{ filter: filterStyle }}
         />
       ) : (
-        <p>No Image</p>
+        <div className="placeholder">🖼</div>
       )}
     </div>
   );

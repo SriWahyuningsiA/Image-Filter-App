@@ -9,22 +9,20 @@ function FilterControls({
   setBrightness
 }) {
   return (
-    <div style={{ width: "250px", textAlign: "left" }}>
-      <h3>Filtering</h3>
+    <div className="filter-box">
+      <h2>Filtering</h2>
 
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            checked={grayscale}
-            onChange={() => setGrayscale(!grayscale)}
-          />
-          Grayscale
-        </label>
+      <div className="control">
+        <label>Grayscale</label>
+        <input
+          type="checkbox"
+          checked={grayscale}
+          onChange={() => setGrayscale(!grayscale)}
+        />
       </div>
 
-      <div>
-        <label>Blur: {blur}px</label>
+      <div className="control">
+        <label>Blurring</label>
         <input
           type="range"
           min="0"
@@ -34,12 +32,12 @@ function FilterControls({
         />
       </div>
 
-      <div>
-        <label>Brightness: {brightness}%</label>
+      <div className="control">
+        <label>Brightness</label>
         <input
           type="range"
           min="50"
-          max="200"
+          max="150"
           value={brightness}
           onChange={(e) => setBrightness(e.target.value)}
         />

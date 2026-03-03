@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ImagePreview from "./ImagePreview";
 import FilterControls from "./FilterControls";
+import "./index.css";
 
 function App() {
   const [image, setImage] = useState(null);
@@ -22,13 +23,17 @@ function App() {
   `;
 
   return (
-    <div style={{ textAlign: "center", padding: "30px" }}>
-      <h2>Simple Image Filter App</h2>
+    <div className="app">
+      <h1 className="title">
+        🎨 Simple Image Filter App
+      </h1>
 
-      <input type="file" onChange={handleUpload} />
+      <label className="upload-btn">
+        ⬆ Upload Image
+        <input type="file" hidden onChange={handleUpload} />
+      </label>
 
-      <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginTop: "20px" }}>
-        
+      <div className="container">
         <ImagePreview image={image} filterStyle={filterStyle} />
 
         <FilterControls
@@ -39,7 +44,6 @@ function App() {
           brightness={brightness}
           setBrightness={setBrightness}
         />
-
       </div>
     </div>
   );
