@@ -87,6 +87,17 @@ body {
   font-weight: bold;
 }
 
+/* Khusus Grayscale sejajar */
+.grayscale-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;   /* jarak kecil antar tulisan dan checkbox */
+}
+
+.grayscale-control label {
+  margin-bottom: 0;
+}
+
 input[type="range"] {
   width: 100%;
 }
