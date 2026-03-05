@@ -13,12 +13,12 @@ function FilterControls({
       <h2>Filtering</h2>
 
       <div className="control grayscale-control">
-  <label>Grayscale</label>
-  <input
-    type="checkbox"
-    checked={grayscale}
-    onChange={() => setGrayscale(!grayscale)}
-  />
+      <label>Grayscale</label>
+        <input
+          type="checkbox"
+          checked={grayscale}
+          onChange={() => setGrayscale(!grayscale)}
+        />
       </div>
 
       <div className="control">
