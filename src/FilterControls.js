@@ -1,19 +1,22 @@
 import React from "react";
+import useFilterStore from "./store/filterStore";
 
-function FilterControls({
-  grayscale,
-  setGrayscale,
-  blur,
-  setBlur,
-  brightness,
-  setBrightness
-}) {
+function FilterControls() {
+  const {
+    grayscale,
+    setGrayscale,
+    blur,
+    setBlur,
+    brightness,
+    setBrightness
+  } = useFilterStore();
+
   return (
     <div className="filter-box">
       <h2>Filtering</h2>
 
-      <div className="control grayscale-control">
-      <label>Grayscale</label>
+      <div className="control">
+        <label>Grayscale</label>
         <input
           type="checkbox"
           checked={grayscale}
@@ -28,7 +31,7 @@ function FilterControls({
           min="0"
           max="10"
           value={blur}
-          onChange={(e) => setBlur(e.target.value)}
+          onChange={(e) => setBlur(Number(e.target.value))}
         />
       </div>
 
@@ -39,7 +42,7 @@ function FilterControls({
           min="50"
           max="150"
           value={brightness}
-          onChange={(e) => setBrightness(e.target.value)}
+          onChange={(e) => setBrightness(Number(e.target.value))}
         />
       </div>
     </div>
